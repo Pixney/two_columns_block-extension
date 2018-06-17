@@ -1,20 +1,26 @@
-{{ asset_add('styles.css', 'pixney.extension.split_screen_block::sass/public.scss') }}
+{{ asset_add('styles.css', 'pixney.extension.two_columns_block::sass/public.scss') }}
 <div class="container">
     <div class="row">
         <div class="col-lg-6">
-            <div class="image">
-                {{block.column_1_image.make()|raw}}
+            <div class="image {{ block.class }}">
+                <picture>
+                    <source srcset="{{ block.column_1_image.cropped().fit(100,200).path }}" media="(min-width: 400px)">
+                    <source srcset="{{ block.column_1_image.cropped().fit(10,10).path }}">
+                    <img src="{{ block.column_1_image.cropped().fit(10,10).path }}" alt="Flowers">
+                </picture>
             </div>
-            <h{{block.headline}}>{{block.column_1_name}}</h{{block.headline}}>
             <p>
                 {{block.column_1_content |raw}}
             </p>
         </div>
         <div class="col-lg-6">
-            <div class="image">
-                {{block.column_2_image.make()|raw}}
+            <div class="image {{ block.class }}">
+                <picture>
+                    <source srcset="{{ block.column_2_image.cropped().fit(100,200).path }}" media="(min-width: 400px)">
+                    <source srcset="{{ block.column_2_image.cropped().fit(10,10).path }}">
+                    <img src="{{ block.column_2_image.cropped().fit(10,10).path }}" alt="Flowers">
+                </picture>
             </div>
-            <h{{block.headline}}>{{block.column_2_name}}</h{{block.headline}}>
             <p>
                 {{block.column_2_content |raw}}
             </p>

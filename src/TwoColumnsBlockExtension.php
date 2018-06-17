@@ -21,5 +21,5 @@ class TwoColumnsBlockExtension extends BlockExtension
     protected $provides = 'anomaly.module.blocks::block.two_columns';
     protected $model    = BlockModel::class;
     protected $view     = 'pixney.extension.two_columns_block::public/layout';
-    protected $wrapper  = 'pixney.theme.gudrun::blocks/wrapper';
+    protected $wrapper  = 'pixney.extension.two_columns_block::blocks/wrapper';
 }
