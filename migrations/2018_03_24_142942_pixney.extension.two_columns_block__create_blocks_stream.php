@@ -23,7 +23,7 @@ class PixneyExtensionTwoColumnsBlockCreateBlocksStream extends Migration
      * @var array
      */
     protected $assignments = [
-        'class',
+        'class', 'left_column_size', 'right_column_size',
         'column_1_image' => [
         ],
         'column_1_content' => [

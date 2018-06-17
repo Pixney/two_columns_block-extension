@@ -1,29 +1,42 @@
 {{ asset_add('styles.css', 'pixney.extension.two_columns_block::sass/public.scss') }}
 <div class="container">
     <div class="row">
-        <div class="col-lg-6">
+        <div class="{{ block.left_column_size|default('col-lg-6') }}">
+            
+            {% if block.column_1_image is not empty %}
             <div class="image {{ block.class }}">
                 <picture>
-                    <source srcset="{{ block.column_1_image.cropped().fit(100,200).path }}" media="(min-width: 400px)">
-                    <source srcset="{{ block.column_1_image.cropped().fit(10,10).path }}">
-                    <img src="{{ block.column_1_image.cropped().fit(10,10).path }}" alt="Flowers">
+                    <source srcset="{{ block.column_1_image.cropped().fit(1200,600).path }}" media="(min-width: 992px)">
+                    <source srcset="{{ block.column_1_image.cropped().fit(800,400).path }}">
+                    <img src="{{ block.column_1_image.cropped().fit(800,400).path }}" alt="Flowers">
                 </picture>
             </div>
-            <p>
-                {{block.column_1_content |raw}}
-            </p>
+            {% endif %}
+            
+            {% if block.column_1_content is not empty %}
+                
+                    {{block.column_1_content |raw}}
+            
+            {% endif %}
         </div>
-        <div class="col-lg-6">
+        <div class="{{ block.right_column_size|default('col-lg-6') }}">
+
+            {% if block.column_2_image is not empty %}
             <div class="image {{ block.class }}">
                 <picture>
-                    <source srcset="{{ block.column_2_image.cropped().fit(100,200).path }}" media="(min-width: 400px)">
-                    <source srcset="{{ block.column_2_image.cropped().fit(10,10).path }}">
-                    <img src="{{ block.column_2_image.cropped().fit(10,10).path }}" alt="Flowers">
+                    <source srcset="{{ block.column_2_image.cropped().fit(1200,600).path }}" media="(min-width: 992px)">
+                    <source srcset="{{ block.column_2_image.cropped().fit(800,400).path }}">
+                    <img src="{{ block.column_2_image.cropped().fit(800,400).path }}" alt="Flowers">
                 </picture>
             </div>
-            <p>
-                {{block.column_2_content |raw}}
-            </p>
+            {% endif %}
+
+            {% if block.column_2_content is not empty %}
+              
+                    {{block.column_2_content | raw}}
+               
+            {% endif %}
+           
         </div>
     </div>
 </div>

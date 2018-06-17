@@ -13,7 +13,18 @@ class PixneyExtensionTwoColumnsBlockCreateTwoColumnsBlockFields extends Migratio
         'class' => [
             'type'   => 'anomaly.field_type.text',
             'config' => [
-                'default' => 'teset'
+            ]
+        ],
+
+        'left_column_size' => [
+            'type'   => 'anomaly.field_type.text',
+            'config' => [
+            ]
+        ],
+
+        'right_column_size' => [
+            'type'   => 'anomaly.field_type.text',
+            'config' => [
             ]
         ],
 
