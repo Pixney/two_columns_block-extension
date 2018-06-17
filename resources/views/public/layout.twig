@@ -1,16 +1,23 @@
-<div class="row">
-    <div class="col-md-6">
-        {{block.column_1_image.make()|raw}}
-        <h{{block.headline}}>{{block.column_1_name}}</h{{block.headline}}>
-        <p>
-            {{block.column_1_content |raw}}
-        </p>
-    </div>
-    <div class="col-md-6">
-        {{block.column_2_image.make()|raw}}
-        <h{{block.headline}}>{{block.column_2_name}}</h{{block.headline}}>
-        <p>
-            {{block.column_2_content |raw}}
-        </p>
+{{ asset_add('styles.css', 'pixney.extension.split_screen_block::sass/public.scss') }}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="image">
+                {{block.column_1_image.make()|raw}}
+            </div>
+            <h{{block.headline}}>{{block.column_1_name}}</h{{block.headline}}>
+            <p>
+                {{block.column_1_content |raw}}
+            </p>
+        </div>
+        <div class="col-lg-6">
+            <div class="image">
+                {{block.column_2_image.make()|raw}}
+            </div>
+            <h{{block.headline}}>{{block.column_2_name}}</h{{block.headline}}>
+            <p>
+                {{block.column_2_content |raw}}
+            </p>
+        </div>
     </div>
 </div>
